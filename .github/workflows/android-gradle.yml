@@ -70,6 +70,7 @@ jobs:
         path: ${{ github.workspace }}/android/build/outputs/apk/release/Bifrost_Android.apk
     - name: Upload Release APK
       uses: ncipollo/release-action@v1
+      if: ${{ github.event_name == "release" }} 
       with:
         artifacts: ${{ github.workspace }}/android/build/outputs/apk/release/Bifrost_Android.apk
         token: ${{ secrets.GITHUB_TOKEN }}
