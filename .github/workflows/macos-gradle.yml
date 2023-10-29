@@ -84,7 +84,7 @@ jobs:
         path: ${{ github.workspace }}/desktop/build/compose/binaries/main/dmg/Bifrost-*.dmg
     - name: Upload Release ZIP
       uses: ncipollo/release-action@v1
-      if: ${{ github.event_name == "release" }} 
+      if: github.event_name == 'release'
       with:
         artifacts: 'Bifrost_macOS.zip'
         token: ${{ secrets.GITHUB_TOKEN }}
